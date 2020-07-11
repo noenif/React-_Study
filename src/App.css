@@ -6,7 +6,13 @@
   height: 40vmin;
   pointer-events: none;
 }
+li{
+  list-style: none;
+}
 
+ul{
+  padding:0
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -23,7 +29,14 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.list{
+  border: 1px  solid black;
+  width: 30%;
+  padding-left: 0;
+}
+.list .item{
+  border-bottom: 1px solid #282c34;
+}
 .App-link {
   color: #61dafb;
 }
