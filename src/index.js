@@ -1,17 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
+import "./index.css"
+// import "bootstrap"
+import "bootstrap/dist/css/bootstrap.css"
+import $ from "jquery"
 
+import App from './containers/app'
+import {counter} from './redux/reducers'
+
+// 根据counter函数创建store对象
+const store = createStore(counter)
+
+// 定义渲染根组件标签的函数
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  (
+    <Provider store={store}>
+      <App/>
+    </Provider>
+  ),
   document.getElementById('root')
-);
+)
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+
